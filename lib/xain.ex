@@ -166,6 +166,7 @@ defmodule Xain do
           Logger.error inspect(System.stacktrace)
           reraise exception, System.stacktrace
       end
+      result = HtmlSanitizeEx.html5(result)
       if opts[:safe] do
         case Application.get_env :xain, :after_callback do
           nil ->
@@ -180,15 +181,15 @@ defmodule Xain do
   end
 
   defmacro text(string) do
-    quote do: to_string(unquote(string))
+    quote do: HtmlSanitizeEx.html5(to_string(unquote(string)))
   end
 
   defmacro raw(string) do
     quote do
       str = case unquote(string) do
         string when is_binary(string) -> string
-        {:safe, list} -> List.to_string list
-        other -> to_string other
+        {:safe, list} -> HtmlSanitizeEx.html5(List.to_string(list))
+        other -> HtmlSanitizeEx.html5(to_string(other))
       end
     end
   end
