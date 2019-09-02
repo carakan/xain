@@ -309,7 +309,11 @@ defmodule Xain do
             reraise exception, System.stacktrace()
         end
 
-      result = HtmlSanitizeEx.html5(result)
+      result =
+        case result do
+          x when is_list(x) -> Enum.map(x, fn e -> HtmlSanitizeEx.html5(e) end)
+          _ -> HtmlSanitizeEx.html5(result)
+        end
 
       if opts[:safe] do
         case Application.get_env(:xain, :after_callback) do
