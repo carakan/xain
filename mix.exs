@@ -22,7 +22,7 @@ defmodule Xain.Mixfile do
 
   defp deps do
     [
-      {:html_sanitize_ex, "~> 1.3.0", github: 'carakan/html_sanitize_ex'}
+      {:html_sanitize_ex, github: 'carakan/html_sanitize_ex'}
     ]
   end
 

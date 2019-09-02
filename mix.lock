@@ -1,4 +1,4 @@
 %{
-  "html_sanitize_ex": {:git, "https://github.com/carakan/html_sanitize_ex.git", "089b19bec2b48f3fc184303b30b99fe9f4ed5e8c", []},
+  "html_sanitize_ex": {:git, "https://github.com/carakan/html_sanitize_ex.git", "98cb3c45723ed909ad177e3160d69ff1a6e1f223", []},
   "mochiweb": {:hex, :mochiweb, "2.18.0", "eb55f1db3e6e960fac4e6db4e2db9ec3602cc9f30b86cd1481d56545c3145d2e", [:rebar3], [], "hexpm"},
 }
