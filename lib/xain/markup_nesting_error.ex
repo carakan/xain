@@ -1,7 +1,7 @@
 defmodule Xain.MarkupNestingError do
-  defexception [:message] 
+  defexception [:message]
 end
 
 defmodule Xain.NoMarkupError do
-  defexception [:message] 
+  defexception [:message]
 end
